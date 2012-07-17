@@ -1,0 +1,177 @@
+@font-face {font-family:
+    'nevis';
+    src:
+    url('/editor/fonts/nevis-webfont.eot');
+    src:
+    url('/editor/fonts/nevis-webfont.eot?#iefix') format('embedded-opentype'), url('/editor/fonts/nevis-webfont.woff') format('woff'), url('/editor/fonts/nevis-webfont.ttf') format('truetype'), url('/editor/fonts/nevis-webfont.svg#nevisBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing:
+    .025em;
+}
+
+body {
+    text-align: center;
+    background-image: url('/editor/direct/images/template/bg_main.png');
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: top left;
+}
+
+.j15 {
+    background-color: #dadada;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: top left;
+}
+
+form {
+    margin: 0px;
+}
+
+#login-left {
+    float: left;
+    width: 400px;
+}
+
+#login-right {
+    float: left;
+    margin-left: 60px;
+    text-align: left;
+}
+
+#content {
+    padding: 76px 46px;
+    background-color: #f4f4f4;
+    height: 390px;
+}
+
+#dudeImage {
+    display: block;
+    margin: 0px auto;
+}
+
+a {
+    color: #cc6600;
+    font-size: 12px;
+    font-family: Arial;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #588fbc;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+#logo {
+    padding: 0px 0px 8px 0px;
+}
+
+.inputBox {
+    width: 390px;
+    padding-top: 16px;
+/*    margin-bottom: 10px; */
+}
+
+.inputTitle {
+    font-weight: bold;
+    font-family: arial;
+    font-size: 16px;
+    color: #666;
+    padding-left: 1px;
+    padding-bottom: 6px;
+}
+
+#resetTitle {
+    font-weight: bold;
+    font-family: arial;
+    font-size: 18px;
+    color: #666;
+    padding-bottom: 8px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.inputBox input,.inputBox select {
+    width: 390px;
+    margin: 0px;
+    border: 2px solid #E7E9D9;
+    color: #93B6D1;
+    padding: 10px;
+    font-size: 15px;
+    overflow: visible;
+    line-height: 18px;
+}
+
+.inputBox select, .inputBox option{
+	line-height: 18px;
+    color: #666;
+   	font-size: 15px;
+    font-weight: bold !important;
+    
+}
+.loginText {
+    color: #618CAB;
+}
+
+#connect {
+    text-align: center;
+    padding-top: 26px;
+    color: #31709E;
+    font-weight: bold;
+    font-family: Nevis;
+    font-size: 13px;
+}
+
+#connect.connectSignup {
+	 padding-top: 0px;
+}
+
+#connect a {
+    position: relative;
+    top: 2px;
+    margin-right: 4px;
+}
+
+.terms {
+    padding-top: 5px;
+    white-space: nowrap;
+}
+
+.terms, .terms a {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.terms, .terms a:hover {
+    font-size: 11px;
+}
+
+.login_error {
+    font-weight: bold;
+    color: #e68526;
+    height: 20px;
+    font-size: 14px;
+   /* white-space: nowrap; */
+    padding: 0;
+    width: 390px;
+}
+
+.connetWithDuda {
+    font-family: Nevis;
+    font-size: 13px;
+}
+
+.login-left-title {
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: bold;
+	color: #666666;
+	margin-bottom: 30px;
+}

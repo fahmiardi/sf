@@ -1,0 +1,322 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head lang="en">
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>Smooth Admin Documentation</title>
+		<!-- Framework CSS -->
+		<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print" />
+		<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+		<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
+		<style type="text/css" media="screen">
+			p, table, hr, .box { margin-bottom:25px; } 
+			.box p { margin-bottom:10px; }
+		</style>
+	</head>
+	<body>
+		<!-- container -->
+		<div class="container">
+			<h3 class="center alt">&ldquo;Smooth Admin&rdquo; Documentation by &ldquo;Mike Geise&rdquo; v1.0</h3>		
+			<hr />
+			<!-- introduction -->
+			<h1 class="center">&ldquo;Smooth Admin&rdquo;</h1>
+			<div class="borderTop">
+				<!-- author -->
+				<div class="span-6 colborder info prepend-1">
+					<p class="prepend-top">
+						<strong>
+						Created: April 2010<br>
+						By: Mike Geise<br />
+						Email: <a href="mailto:mike343@gmail.com">mike343@gmail.com</a>
+						</strong>
+					</p>
+				</div>
+				<!-- end author -->
+				<!-- gratification -->
+				<div class="span-12 last">
+					<p class="prepend-top append-0">Thank you for purchasing Smooth Admin. If you have any questions that are beyond the scope of this help file, please feel free to email via my contact form <a href="http://themeforest.net/user/mike343">here</a>. Thanks so much!</p>
+				</div>
+				<!-- end gratification -->
+			</div>
+			<!-- end introduction -->
+			<hr />
+			<h2 id="toc" class="alt">Table of Contents</h2>
+			<ol class="alpha">
+				<li>
+					<a href="#html_structure">HTML Structure</a>
+					<ul>
+						<li><a href="#html_menu">How to Add a Item to the Left Navigation Menu</a></li>
+						<li><a href="#html_menu_tabs">How to Add a Tab</a></li>
+						<li><a href="#html_menu_tabs_set">How to Add a New Set of Tabs</a></li>
+					</ul>
+				</li>
+				<li><a href="#css">CSS Files and Structure</a></li>
+				<li>
+					<a href="#javascript">JavaScript</a>
+					<ul>
+						<li><a href="#javascript_jqueryui">Jquery UI &amp; Form Elements</a></li>
+						<li><a href="#javascript_autocomplete">Jquery Auto Complete</a></li>
+						<li><a href="#javascript_flot">Jquery Flot (Charting)</a></li>
+						<li><a href="#javascript_tinymce">TinyMCE (Rich Text Editor)</a></li>
+					</ul>
+				</li>
+				<li><a href="#psd">PSD Files</a></li>
+				<li>
+					<a href="#misc">Miscellaneous</a>
+					<ul>
+						<li><a href="#misc_chart">Removing the Products Chart</a></li>
+					</ul>
+				</li>
+				<li><a href="#credits">Sources and Credits</a></li>
+			</ol>
+			<hr />
+			<h3 id="html_structure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+			<p>This theme can either be a fluid layout with two columns or with no left column. Also included is a fixed width version with or without the left column. The html files that demonstrates this behavior has been named appropriately.</p>
+			<ul>
+				<li><strong>index.html</strong><br />Full width layout with left column</li>
+				<li><strong>index-fixed.html</strong><br />Fixed width layout at 960 pixels with left column</li>
+				<li><strong>index-fixed-no-column.html</strong><br />Fixed width layout at 960 pixels without left column</li>
+				<li><strong>index-no-column.html</strong><br />Full width layout without left column</li>
+			</ul>
+			<p>All of the information within the main content area is nested within a div with an id of "content". The left sidebar content is within a div with an id of "left" and the right sidebar content is within a div with an id of "right". Most of your editing and content will be within the div with the id of "right".</p>
+			<p><img src="assets/images/html_structure.jpg" alt="Html Structure" /></p>
+			<h3 id="html_menu">How to Add a Item to the Left Navigation Menu - <a href="#toc">top</a></h3>
+			<p>To add a menu item and sub links you must give the h6 heading a unique id in the following format "h-menu-[uniqueid]" and you must also give the unordered list (ul) under the h6 heading / link a unique id with the following format "menu-[uniqueid]". The link href must contain the name of the id with the following format "#uniqueid". </p>
+			<p>The following example below will have the unique id named products and as you can see the Products link href contains "#articles" and the unordered list (ul) which contains the sub links has the id "menu-products"</p>
+			<h4>Example:</h4>
+<pre>
+&lt;h6 id="h-menu-products"&gt;&lt;a href="#products"&gt;&lt;span&gt;Products&lt;/span&gt;&lt;/a&gt;&lt;/h6&gt;
+&lt;ul id="menu-products" class="closed"&gt;
+	&lt;li&gt;&lt;a href=""&gt;Manage Products&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="last"&gt;&lt;a href=""&gt;Add Product&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			<p><img src="assets/images/html_menu.jpg" alt="Html Menu" /></p>
+			<h3 id="html_menu_tabs">How to Add a Tab - <a href="#toc">top</a></h3>
+			<p>To add a tab you will simply add another list item (li) to the unordered list (ul) but the href of the hyperlink must contain a unique id of the content you wish to display for this tab.</p>
+			<p>The following example below will have the unique id named cars and as you can see the Cars link href contains "#cars" and the div below the unordered list (ul) contains the id "cars"</p>
+			<h4>Example:</h4>
+<pre>
+&lt;div id="vehicles" class="box"&gt;
+	&lt;div class="title"&gt;
+		&lt;h5&gt;Vehicles&lt;/h5&gt;
+		&lt;ul class="links"&gt;
+			&lt;li&gt;&lt;a href="#trucks"&gt;Trucks&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#cars"&gt;Cars&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div id="trucks"&gt;
+	&lt;/div&gt;
+	&lt;div id="cars"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+			<p><img src="assets/images/html_tabs.jpg" alt="Html Tabs" /></p>
+			<h3 id="html_menu_tabs_set">How to Add a New Set of Tabs - <a href="#toc">top</a></h3>
+			<p>To add new set of tabs you will simply create a unordered list (ul) with the links (refer to <a href="#menu_tabs">How to Add a Tab</a>) within the context box in the div with the class "title".  All of this must be nested within a div with a unique id.</p>
+			<p>You will also have to add some javascript within the head section of your html file.</p>
+			<p>The following example below demonstrates how this is done. The unique id for this example is "mycontent".</p>
+			<p>You can view detailed examples at the following page: <a href="http://jqueryui.com/demos/tabs/">http://jqueryui.com/demos/tabs/</a></p>
+			<h4>Example:</h4>
+			<h5>Javascript:</h5>
+<pre>
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function () {
+		$("#mycontent").tabs();
+	});
+&lt;/script&gt;
+		</pre>
+		<h5>Html:</h5>
+		<pre>
+&lt;div id="mycontent" class="box"&gt;
+	&lt;div class="title"&gt;
+		&lt;h5&gt;Vehicles&lt;/h5&gt;
+		&lt;ul class="links"&gt;
+			&lt;li&gt;&lt;a href="#trucks"&gt;Trucks&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#cars"&gt;Cars&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div id="trucks"&gt;
+	&lt;/div&gt;
+	&lt;div id="cars"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+			<hr />
+			<h3 id="css"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+			<p>Smooth Admin has a total of six CSS files. There is also multiple color scheme styhesheets located in the folder "resources/css/colors"</p>
+			<p>The first stylesheet is a generic reset file located in "resources/css/reset.css". Many web browsers interpret the default behavior of html elements differently. By using a general reset CSS file, we can work round this. Keep in mind, that these values might be overridden somewhere else in the file</p> 
+			<p>The main stylesheet located in "resources/css/style.css" contains all the design elements, positioning and specific stylings for the page</p>
+			<p>We also have additional stylesheets that once used will change either the heading, columns or the width of the page.</p>
+			<ul>
+				<li><strong>style_alternate.css</strong><br />this stylesheet will give you the alternate header.</li>
+				<li><strong>style_full.css</strong><br />this stylesheet will keep the layout at a liquid width with no column.</li>
+				<li><strong>style_fixed.css</strong><br />this stylesheet will keep the layout at a fixed width of 960 pixels.</li>
+				<li><strong>style_fixed_full.css</strong><br />this stylesheet will keep the layout at a fixed width of 960 pixels with no column.</li>
+			</ul>
+			<p>All of the stylesheets are separated into sections like the following example below:</p>
+<pre>
+/* -----------------------------------------------------------
+	header -> dashboard
+----------------------------------------------------------- */ 
+
+some code
+
+/* -----------------------------------------------------------
+	footer
+----------------------------------------------------------- */ 
+
+some code
+
+etc, etc.
+</pre>
+			<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p>
+			<hr />
+			<h3 id="javascript"><strong>C) Javascript</strong> - <a href="#toc">top</a></h3>
+			<p>Most of the time you will not need to edit any of the javascript files but, if you would like to take a peek I have documented the custom javscript I wrote thoroughly.</p>
+			<p>Smooth Admin makes use of nine javascript files.</p>
+			<ol>
+				<li>jquery-1.4.2.min.js</li>
+				<li>jquery-ui-1.8.custom.min.js</li>
+				<li>jquery.ui.selectmenu.js (select styling)</li>
+				<li>jquery.flot.min.js (charting libary)</li>
+				<li>smooth.js (color picker, messages fade away)</li>
+				<li>smooth.chart.js (traffic statistics chart)</li>
+				<li>smooth.table.js (table checkboxes)</li>
+				<li>smooth.form.js (select, button styling and date picker)</li>
+				<li>smooth.menu.js (drop down menu effects)</li>
+			</ol>	  
+			<ol>
+				<li>jquery is a javascript library that greatly reduces the amount of code that you must write.</li>
+				<li>jquery ui provides abstractions for low-level interaction and animation, advanced effects and high-level, themeable widgets, built on top of the jquery javascript library</li>
+				<li>jquery select menu allows you to style select lists.</li>
+				<li>jquery flot is used for charting. An example of this is the traffic statistics chart.</li>
+				<li>In addition to the jquery scripts, I have written code for the left navigation menu, tabs and table checkboxes that is all contained in javascript files starting with smooth.[function].js located in the resources/scripts folder.</li>
+			</ol>
+			<p>If you would like to learn more about jquery or jquery ui you can visit the following urls.</p>
+			<ul>
+				<li><a href="http://jquery.com/">http://www.jquery.com/</a></li>
+				<li><a href="http://jqueryui.com/">http://www.jqueryui.com/</a></li>
+			</ul>
+			<h3 id="javascript_jqueryui">Jquery UI &amp; Form Elements</h3>
+			<p>I have used the following jquery ui widgets to style and add extra functions to certain form elements</p>
+			<h4>Date Picker</h4>
+			<p>To use the date picker on any text box you must include the following javascript in the head section your page. The example below will add a date picker to the textbox with the id "published". You can also view more demos and options at following page: <a href="http://jqueryui.com/demos/datepicker/">http://jqueryui.com/demos/datepicker/</a></p>
+<pre>
+&lt;script type="text/javascript"&gt;
+	$("#published").datepicker({
+		showOn: 'button',
+		buttonImage: 'resources/images/calendar.gif',
+		buttonImageOnly: true
+	});
+&lt;/script&gt;
+</pre>
+			<h4>Styled Select Menus</h4>
+			<p>The styled select menus is based on the jquery ui selectmenu, This plugin is still in the planning stages but so far has proven to be stable. You can read more about the selectmenu script <a href="http://www.filamentgroup.com/lab/jquery_ui_selectmenu_an_aria_accessible_plugin_for_styling_a_html_select/">here</a>.</p>
+			<p>To style any select menu on your page you must simply include the following javascript in the head section of your page.</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+	$("select").selectmenu({
+		style: 'dropdown',
+		width: 200,
+		menuWidth: 200
+	});
+&lt;/script&gt;
+</pre>
+			<h4>Styled Submit Buttons</h4>
+			<p>The custom submit buttons are made possible by the jquery ui button widget. You can read more about the button widget at the following page: <a href="http://jqueryui.com/demos/button/">http://jqueryui.com/demos/button/</a></p>
+			<p>For any submit,reset or regular button you would like to style you must include the following javascript in the head section of your page. The first example below will style any buttons that are a input with the type submit. The second example will style both inputs that have the type submit or reset.</p>
+			<h5>Submit Buttons</h5>
+<pre>
+&lt;script type="text/javascript"&gt;
+	$("input:submit").button();
+&lt;/script&gt;
+</pre>
+			<h5>Submit &amp; Reset Buttons</h5>
+<pre>
+&lt;script type="text/javascript"&gt;
+	$("input:submit, input:reset").button();
+&lt;/script&gt;
+</pre>
+			<h3 id="javascript_autocomplete">Jquery Auto Complete</h3>
+			<p>The auto complete is part of jquery ui.  You can read more about auto complete at the following page: <a href="http://docs.jquery.com/UI/Autocomplete">http://docs.jquery.com/UI/Autocomplete</a></p>
+			<p>For any input that has the type of text you would like to have auto complete functionality  you must include the following javascript in the head section of your page. The example below will provide auto complete functionality for the input with the id of products.</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+    $("input#products").autocomplete({
+        source: ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"]
+    });
+&lt;/script&gt;
+</pre>
+			<h3 id="javascript_flot">Jquery Flot (Charting)</h3>
+			<p>Jquery Flot is being used for the traffic statistics chart. You can find more information and documentation at the jquery flot project page: <a href="http://code.google.com/p/flot/">http://code.google.com/p/flot/</a></p>
+			<p>The following example below was used to create the traffic chart showing vists and pageviews over a 15 day period. The chart is placed inside a div with the unique id "traffic".</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+	var visits = [[1, 16343], [2, 15023], [3, 17232], [4, 16023], [5, 15232], [6, 15202], [7, 17233], [8, 16343], [9, 15023], [10, 17232], [11, 16023], [12, 15232], [13, 15202], [14, 17233], [15, 15202]];
+	var views = [[1, 86343], [2, 75023], [3, 87232], [4, 96023], [5, 85232], [6, 85202], [7, 77233], [8, 86343], [9, 75023], [10, 87232], [11, 96023], [12, 85232], [13, 85202], [14, 77233], [15, 85202]];
+
+	$.plot($('#traffic'),[
+		{ data: visits },
+		{ data: views }
+	],{
+		lines: { show: true },
+		points: { show: true },
+		grid: { backgroundColor: '#fffaff' }
+	});
+&lt;/script&gt;
+</pre>
+			<h3 id="javascript_tinymce">TinyMCE (Rich Text Editor)</h3>
+			<p>TincyMCE is being used for the rich text editing for the textareas. You can find more information and documentation at the following page on the tinymce website: <a href="http://tinymce.moxiecode.com/documentation.php">http://tinymce.moxiecode.com/documentation.php</a></p>
+			<p>To enable the editor for any textarea with the class "editor" put the following javascript in the head section of your page</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+	$("textarea.editor").tinymce({
+		script_url : "resources/scripts/tiny_mce/tiny_mce.js",
+		mode : "textareas",
+		theme : "advanced",
+		theme_advanced_buttons1 : "newdocument,separator,bold,italic,underline,strikethrough,separator,justifyleft, justifycenter,justifyright,justifyfull,separator,cut,copy,paste,pastetext,pasteword,separator,help",
+		theme_advanced_buttons2 : "bullist,numlist,separator,outdent,indent,blockquote,separator,undo,redo,separator,link,unlink,anchor,image,cleanup,help,code,separator,forecolor,backcolor",
+		theme_advanced_buttons3: "",
+		theme_advanced_buttons4: "",
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "left"
+	});
+&lt;/script&gt;
+</pre>
+			<hr />	
+			<h3 id="psd"><strong>D) PSD Files</strong> - <a href="#toc">top</a></h3>	
+			<p>There is two main PSD files included with this theme named smoothnadmin.psd and smoothadmin_icons.psd located in the psds folder. Both PSD files are well organized in named groups and all layers are named appropriately.</p>
+			<ul>
+				<li>smoothadmin.psd contains the general layout, gradients and colors</li>
+				<li>smoothadmin_icons.psd contains the icons used for the message boxes as well as a few extra icons</li>
+			</ul>
+			<hr />
+			<h3 id="misc"><strong>E) Miscellaneous</strong> - <a href="#toc">top</a></h3>
+			<h3 id="misc_chart">Removing the Products Chart</h3>
+			<p>When removing the products chart you will have to also remove the javascript file in the head section of your page to avoid having the javascript which powers the chart from throwing an error and causing the rest of the javasript to not function.</p>
+			<p>The following line below is the javascript file you must remove from the head section of your page.</p>
+<pre>
+&lt;script src="resources/scripts/smooth.chart.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+			<hr />
+			<h3 id="credits"><strong>F) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+			<h3>FamFamFam Icon Set</h3>
+			<p>The FamFamFam Icon Set is a free icon set. All of these icons and more can be downloaded from the folowing location: <a href="http://www.famfamfam.com/">http://www.famfamfam.com/</a></p>
+			<h3>Jquery &amp; Jquery UI</h3>
+			<p>Jquery &amp; Jquery UI are licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT</a> License. You can learn more about jquery by visiting the following page: <a href="http://jquery.org">http://jquery.org</a>.</p>
+			<h3>Jquery Flot</h3>
+			<p>Jquery Flot is Copyright (c) 2007-2009 IOLA and Ole Laursen. You can learn more about jquery by visiting the following page: <a href="http://code.google.com/p/flot/">http://code.google.com/p/flot/</a>.</p>
+			<h3>TinyMCE</h3>
+			<p>TinyMCE is licensed under the <a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public</a> License. You can learn more about jquery by visiting the following page: <a href="http://tinymce.moxiecode.com/">http://tinymce.moxiecode.com/</a>.</p>
+			<h3>Dropdown Menu</h3>
+			<p>The dropdown menu was orignally created by Kriesi, You can view his themeforest profile <a href="http://themeforest.net/user/Kriesi">here</a> or read more about the drop down menu at: <a href="http://www.kriesi.at/archives/create-a-multilevel-dropdown-menu-with-css-and-improve-it-via-jquery">http://www.kriesi.at/archives/create-a-multilevel-dropdown-menu-with-css-and-improve-it-via-jquery</a></p>
+			<hr />
+			<p>Once again, thank you for purchasing Smooth Admin. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 	
+			<p class="append-bottom alt large"><strong>Sincerely, Mike Geise</strong></p>
+			<p><a href="#toc">Go To Table of Contents</a></p>
+			<hr class="space">
+		</div>
+		<!-- end container -->
+	</body>
+</html>

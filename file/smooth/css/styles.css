@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=text] {
+    padding: 4px;
+}
+
+#ajaxLoadAni {
+    background: #3A3A3A;
+    color: #fff;
+    display: none;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 40%;
+    padding: 8px;
+    width: 106px;
+    z-index: 9999;
+}
+
+#ajaxLoadAni span {
+    float: right;
+    margin: 2px 0 0 0;
+}
+
+#tabs {
+    font-size: .9em;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.ui-widget-content {
+    font-size: .8em;
+}
+
+#records {
+    font-size: 1em;
+    width: 100%;
+}
+
+#records tr:nth-child(2n) {
+    background: #EAEAEA;
+}
+
+#records tr:hover {
+    background: #CCCCCC;
+}
+
+#records td {
+    padding: 6px;
+    margin: 8px;
+}
+
+#delConfDialog, #msgDialog, #updateDialog {
+    font-size: 1em;
+}
+
+#updateDialog label {
+    display: inline-block;
+    text-align: right;
+    width: 90px;
+}
+
+#create label {
+    display: inline-block;
+    text-align: right;
+    width: 60px;
+}
+
+/* Validation label */
+#create label.error {
+    color: red;
+    font-size: .9em;
+    padding: 4px;
+    margin: 0 0 0 4px;
+    width: auto;
+}
+
+/* DataTables specific styles */
+.fg-toolbar {
+    padding: 6px;
+}
+.dataTables_length, .dataTables_info {
+    float: left;
+    margin: 3px 0 0;
+}
+.dataTables_filter, .dataTables_paginate {
+    float: right;
+}
+.DataTables_sort_wrapper {
+    cursor: pointer;
+    padding: 4px;
+    position: relative;
+}
+.DataTables_sort_wrapper .css_right {
+    position: absolute;
+    right: 0;
+    top: 4px;
+}

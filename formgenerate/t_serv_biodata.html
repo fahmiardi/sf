@@ -1,0 +1,58 @@
+<html><body style=''><form method=post action='http://202.53.249.205/smartfren/index.php/mobile/adddynamicform'><input type=hidden name=serviceid value=1><input type=hidden name=tablename value=t_serv_biodata>Nama<br/><input type=text name='nama' id='nama' style='padding: 6px 10px; border-radius: 6px; -webkit-border-radius: 6px'/><br/>Alamat Rumah<br/><textarea name='alamat_rumah' id='alamat_rumah' cols='30' rows='5' style='padding: 6px 10px; border-radius: 6px; -webkit-border-radius: 6px'/></textarea><br/>Territory<br><select name='territory' id='territory' style='padding: 6px 10px; border-radius: 6px; -webkit-border-radius: 6px'><option value='3'> Central Java</option><option value='4'> East Java</option><option value='5'> Kalimantan</option><option value='7'> Cluster 2</option><option value='8'> Cluster 3</option><option value='9'> Cluster 4</option><option value='10'> Cluster 5</option><option value='11'> Cluster 6</option><option value='12'> Cluster 7</option><option value='13'> Cluster 8</option><option value='14'> Cluster 9</option><option value='15'> Cluster 10</option><option value='2'> JABODETABEK</option><option value='65'> 0</option><option value='66'> 0</option><option value='6'> Cluster 1</option><option value='1'> Nasional</option><option value='16'> Perry Cell</option><option value='18'> Koplo</option><option value='22'> hvh</option><option value='23'> Nokia Cell</option><option value='24'> apa deh cell</option><option value='25'> Test Cell</option><option value='26'> Test Cell</option><option value='27'> Test Cell</option><option value='28'> Test Cell</option><option value='29'> Test Cell</option><option value='30'> Test Cell</option><option value='31'> Test Cell</option><option value='32'> it's not over cell</option><option value='33'> it's not over cell</option><option value='34'> it's not over cell</option><option value='35'> it's not over cell</option><option value='36'> it's not over cell</option><option value='37'> it's not over cell</option><option value='38'> it's not over cell</option><option value='39'> it's not over cell</option><option value='17'> Ardianto Cell</option><option value='45'> Agent Rahasia</option><option value='46'> Agent Tidak Rahasia</option><option value='47'> Agent Pribadi</option><option value='48'> Agent Beneran</option><option value='50'> test</option><option value='51'> test</option><option value='52'> test</option><option value='53'> test</option><option value='54'> test</option><option value='55'> hchfy</option><option value='56'> Ap aja cell</option><option value='57'> Ap aja cell</option><option value='58'> koplo dd</option><option value='59'> dsdsdsds</option><option value='60'> 0</option><option value='61'> 0</option><option value='62'> 0</option><option value='63'> 0</option><option value='64'> 0</option></select><br/><center><input type='button' value='kirim' style='border-radius: 6px; -webkit-border-radius: 6px; width: 98%'></center></form><script type="text/javascript">
+									function parseForm(event) {
+										var form = this;
+										if (this.tagName.toLowerCase() != 'form')
+											form = this.form;    
+										var data = '';
+										if (!form.method)  form.method = 'get';
+											data += 'method==' + form.method;
+										data += '&&action==' + form.action;     
+										/*	var inputs = document.forms[0].getElementsByTagName('input');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button')
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+										} */
+										var inputs = document.forms[0].getElementsByTagName('input');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button' && field.type != 'radio' && field.type != 'checkbox'){
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+											}
+											else if(field.type == 'radio')
+											{
+												if (field.checked) {
+													data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+												}
+											}
+											else if(field.type == 'checkbox')
+											{
+												if (field.checked) {
+													data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+												}
+											}	         
+										}
+			   
+										var inputs = document.forms[0].getElementsByTagName('select');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button')
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+										}
+										var inputs = document.forms[0].getElementsByTagName('textarea');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button')
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+											}
+										window.HTMLOUT.processFormData(data);
+									}
+	       
+									for (var form_idx = 0; form_idx < document.forms.length; ++form_idx)
+										document.forms[form_idx].addEventListener('submit', parseForm, false);   
+									var inputs = document.getElementsByTagName('input');
+									for (var i = 0; i < inputs.length; i++) {
+										if (inputs[i].getAttribute('type') == 'button')
+											inputs[i].addEventListener('click', parseForm, false);
+									}
+									</script></html>

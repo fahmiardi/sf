@@ -1,0 +1,1 @@
+<html><body style='background:><form method=post action='http://202.53.249.209/smartfren/index.php/adddynamicform'><input type=hidden name=serviceid value=3><input type=hidden name=tablename value=t_serv_test1>label1<br/><input type=text name='label1'/><br/>text1<br/><input type=text name='text1'/><br/><input type=submit value='kirim'></form></html>

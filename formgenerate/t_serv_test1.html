@@ -1,0 +1,58 @@
+<html><body style=''><form method=post action='http://202.53.249.205/smartfren/index.php/mobile/adddynamicform'><input type=hidden name=serviceid value=3><input type=hidden name=tablename value=t_serv_test1>label1<br/><input type=text name='label1' id='label1' style='padding: 6px 10px; border-radius: 6px; -webkit-border-radius: 6px'/><br/>text1<br/><textarea name='text1' id='text1' cols='30' rows='5' style='padding: 6px 10px; border-radius: 6px; -webkit-border-radius: 6px'/></textarea><br/><center><input type='button' value='kirim' style='border-radius: 6px; -webkit-border-radius: 6px; width: 98%'></center></form><script type="text/javascript">
+									function parseForm(event) {
+										var form = this;
+										if (this.tagName.toLowerCase() != 'form')
+											form = this.form;    
+										var data = '';
+										if (!form.method)  form.method = 'get';
+											data += 'method==' + form.method;
+										data += '&&action==' + form.action;     
+										/*	var inputs = document.forms[0].getElementsByTagName('input');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button')
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+										} */
+										var inputs = document.forms[0].getElementsByTagName('input');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button' && field.type != 'radio' && field.type != 'checkbox'){
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+											}
+											else if(field.type == 'radio')
+											{
+												if (field.checked) {
+													data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+												}
+											}
+											else if(field.type == 'checkbox')
+											{
+												if (field.checked) {
+													data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+												}
+											}	         
+										}
+			   
+										var inputs = document.forms[0].getElementsByTagName('select');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button')
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+										}
+										var inputs = document.forms[0].getElementsByTagName('textarea');
+										for (var i = 0; i < inputs.length; i++) {
+											var field = inputs[i];
+											if (field.type != 'submit' && field.type != 'reset' && field.type != 'button')
+												data += '&&' + field.name + '==' + field.value + '==' + field.getAttribute('id');
+											}
+										window.HTMLOUT.processFormData(data);
+									}
+	       
+									for (var form_idx = 0; form_idx < document.forms.length; ++form_idx)
+										document.forms[form_idx].addEventListener('submit', parseForm, false);   
+									var inputs = document.getElementsByTagName('input');
+									for (var i = 0; i < inputs.length; i++) {
+										if (inputs[i].getAttribute('type') == 'button')
+											inputs[i].addEventListener('click', parseForm, false);
+									}
+									</script></html>
